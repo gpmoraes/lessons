@@ -19,7 +19,7 @@ function solution($A){
     for ($i=0; $i < $Alen; $i++) { 
         // Verify if the key already exists in the array
         if (array_key_exists($A[$i], $result)) {
-            
+            // If repeat more than 2 times so it is a new pair
             if ($result[$A[$i]] == 2) {
                 $result[$A[$i]] = 0;
             }
