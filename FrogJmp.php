@@ -1,4 +1,7 @@
 <?php
+/**
+ * The time complexity is O(1)
+ */
 
 $X = 0;
 $Y = 0;
