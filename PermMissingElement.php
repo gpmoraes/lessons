@@ -22,5 +22,4 @@ function solution($A){
 }
 
 genArray($A);
-//var_dump($Asort);
 var_dump(solution($A));
