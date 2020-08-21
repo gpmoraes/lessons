@@ -13,7 +13,7 @@ function solution($A){
     for ($i=0; $i < $Asize; $i++) { 
         $diff += abs($A[$i]);
     }
-    // If there are only 2 ther is no need to 
+    // If there are only 2 then is no need to 
     // run a loop
     if ($Asize == 2) {
         return abs($A[0] - $A[1]);
