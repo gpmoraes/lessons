@@ -1,24 +1,26 @@
 <?php
 
 $A = [1,3,1,4,2,3,5,4];
-$X = 5;
+$X = 7;
 
 function solution($X, $A) {
-    $size  = count($A);
-    $res   = []; 
-    $count = $X*($X+1)/2;
+    $check = [];
+    $size = count($A);
 
-    for ($i=0; $i < $size; $i++) { 
-        if (!in_array($A[$i], $res)) {
-            array_push($res, $A[$i]);
-            $count -= $A[$i];
+    // only check if the leaf was placed
+    for ($i = 0; $i < $size; $i++){        
+        if (!isset($check[$A[$i]])){
+            $X--;
+            $check[$A[$i]] = true;
         }
-        if ($count == 0) {
-            return $i-1;
+
+        // If $X is zero all the leafes has been placed
+        if (!$X){
+            return $i;
         }
-        
     }
-    return -1;
+    
+    return -1; 
 }
 
 var_dump(solution($X, $A));
