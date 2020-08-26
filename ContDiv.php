@@ -1,23 +1,23 @@
 <?php
 
-$A = 11;
-$B = 345;
-$K = 17;
+$A = 6;
+$B = 11;
+$K = 2;
 
 function solution($A, $B, $K){
-    $count = 0;
-    $sum = 0;
-
-    // realiza sucessivas somas e ve se o valor está menos que o máximo
-
-    while ($sum < $B) {
-        $sum += $K;
-        var_dump("SOMA: " . $sum);
-        if ($sum <= $B) {
-            $count++;
-        }
+    $check_A = $A % $K;
+    $sum     = 0;
+    // A will defines if the result is plus one
+    if ($check_A == 0) {
+        $sum = 1;
     }
-    return $count;
+    
+    $A = (int) floor($A / $K);
+    $B = (int) floor($B / $K);
+    
+    $res = ($B - $A) + $sum;
+ 
+    return (int) floor($res);
 }
 
 var_dump(solution($A, $B, $K));
